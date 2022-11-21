@@ -41,7 +41,7 @@ enum layers {
 #define SFT_NN  MT(MOD_LSFT, KC_N)
 #define SFT_ENT  MT(MOD_LSFT, KC_ENT)
 #define LOWER_SPC  LT(_LOWER, KC_SPC)
-#define CTL_SPC MT(MOD_LCTL, KC_SPC)
+#define LGUI_SPC MT(MOD_LGUI, KC_SPC)
 #define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
 #define CTL_MINS MT(MOD_RCTL, KC_MINUS)
 #define ALT_ENT  MT(MOD_LALT, KC_ENT)
@@ -61,17 +61,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |SFT_TAB |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  | [ {  |      |  |      |  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
+ * |  LCtl  |   Z  |   X  |   C  |   V  |   B  | [ {  |      |  |      |  ] } |   N  |   M  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |Adjust| ALT  | Space| Space| Nav  |  |SFT_ENT|Enter| Space | Bspc | Menu |
- *                        |      |      | LCTRL| LOWER|      |  |      |      |      |      |      |
+ *                        |      |      | L_GUI| LOWER|      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
     KC_ESC  , KC_Q ,  KC_W   ,  KC_E  ,   KC_R ,   KC_T ,                                        KC_Y,   KC_U ,  KC_I ,   KC_O ,  KC_P , KC_BSPC,
     SFT_TAB , KC_A ,  KC_S   ,  KC_D  ,   KC_F ,   KC_G ,                                        KC_H,   KC_J ,  KC_K ,   KC_L ,KC_SCLN,CTL_QUOT,
-    KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC ,_______,  _______ , KC_RBRC , KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                               ADJUST , KC_LALT, CTL_SPC,LOWER_SPC, NAV   ,  SFT_ENT , KC_ENT  ,KC_SPC, KC_BSPC, KC_APP
+    KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , KC_LBRC ,_______,  _______ , KC_RBRC , KC_N,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                               ADJUST , KC_LALT,LGUI_SPC,LOWER_SPC, NAV   ,  SFT_ENT , KC_ENT  ,KC_SPC, KC_BSPC, KC_APP
     ),
 
 /*
@@ -82,17 +82,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |SFT_TAB |   A  |   S  |   R  |T+LShi|   G  |                              |   F  |   N  |   E  |   I  |   O  |Ctrl/' "|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | LShift |   Z  |   X  |   C  |   V  |   B  |      |      |  |      |      |   J  |   H  | ,  < | . >  | /  ? | RShift |
+ * |  LCtl  |   Z  |   X  |   C  |   V  |   B  |      |      |  |      |      |   J  |   H  | ,  < | . >  | /  ? | RShift |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |Adjust| ALT  | Space| Space|  Nav |  |      |Enter | Space| Bspc | Menu |
- *                        |      |      | LCTRL| LOWER|      |  |      | CODE |      |      |      |
+ *                        |      |      | L_GUI| LOWER|      |  |      | CODE |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SOUL] = LAYOUT(
      KC_ESC  , KC_Q ,  KC_W   ,  KC_L  ,   KC_D ,   KC_P ,                                        KC_K,   KC_M ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSPC,
      SFT_TAB , KC_A ,  KC_S   ,  KC_R  ,  SFT_TT,   KC_G ,                                        KC_F, SFT_NN ,  KC_E ,   KC_I ,  KC_O , CTL_QUOT,
-     KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , _______,_______, _______  , _______,   KC_J,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
-                               ADJUST , KC_LALT, CTL_SPC,LOWER_SPC, NAV  ,  _______ , CODE_ENT ,KC_SPC, KC_BSPC, KC_APP
+     KC_LCTL , KC_Z ,  KC_X   ,  KC_C  ,   KC_V ,   KC_B , _______,_______, _______  , _______,   KC_J,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, KC_RSFT,
+                                ADJUST , KC_LALT,LGUI_SPC,LOWER_SPC, NAV  ,  _______ , CODE_ENT ,KC_SPC, KC_BSPC, KC_APP
     ),
 
 /*
